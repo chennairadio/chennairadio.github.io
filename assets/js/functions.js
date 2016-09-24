@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
 
 
 function getTotalTimeFromCurrentDate(){
-	var dateToLaunch = new Date("October 01, 2016 00:00:00");
+	var dateToLaunch = new Date("October 17, 2016 00:00:00");
 	// dateToLaunch.setMonth(monthToLaunch);
 	// dateToLaunch.setHours(0,0,0);
 	var currentDate = new Date();
