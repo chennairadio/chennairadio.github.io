@@ -1,5 +1,5 @@
 <?php
-$your_email="your_email@site.com";
+$your_email="rokeshsrm@gmail.com";
 
 if(!empty($_POST))
 {
@@ -7,13 +7,14 @@ if(!empty($_POST))
 	$email=$_POST['email'];
 	$message=$_POST['message'];
 	$_subject=$_POST['subject'];
-	
+
 	$to      = $your_email;
 	$subject = 'Message from Werock: '.$_subject;
 	$headers = 'From: '.$name.' <'.$email.'>' . "\r\n";
 	$message = $name.' sent you a message via the contact form :'."\r\n".$message;
-	
+
 	mail($to, $subject, $message, $headers);
 }
+
 
 ?>

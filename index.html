@@ -47,6 +47,22 @@ Style Sheets
 
 
 <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 </head>
 <style type="text/css">
 @font-face {
@@ -64,6 +80,16 @@ src: url('www.kvijayanand.zzl.org/fonts/bamini.ttf');
 </style>
 
 <body data-spy="scroll" data-target="#sticktop" data-offset="90">
+
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -77,7 +103,7 @@ Preloader
 ========================================-->
 <div id="jSplash">
 	<figure class="preload_logo">
-		<img src="assets/img/basic/logo.png" alt="" style="height: 130px;position=centre"/>
+		<img src="assets/img/logo/CHENNAI RADIO.png" alt="" style="height: 130px"/>
 	</figure>
 </div>
 
@@ -87,9 +113,10 @@ Preloader
     Vegas Slider Images
     =================================-->
     <ul class="vegas-slides hidden" data-speed="6000">
-      <li><img data-fade='5000' src="assets/img/chennaiRadio/bigstock-Dj-Station-Night-Party-Mixer--3587361-min.jpg" alt="" /></li>
-      <li><img data-fade='5000' src="assets/img/chennaiRadio/bigstock-Dj-Console-Mixing-Desk-Ibiza-H-92928164-min.jpg" alt="" /></li>
-      <li><img data-fade='5000' src="assets/img/chennaiRadio/bigstock-Headphones-And-Disco-Waves-Iso-106665782-min.gif" alt="" /></li>
+      <li><img data-fade='5000' src="assets/img/chennaiRadio/3.png" alt="" /></li>
+      <li><img data-fade='5000' src="assets/img/chennaiRadio/1.png" alt="" /></li>
+      <li><img data-fade='5000' src="assets/img/chennaiRadio/2.png" alt="" /></li>
+			<li><img data-fade='5000' src="assets/img/chennaiRadio/4.jpg" alt="" /></li>
     </ul>
     <!--================
      Banner
@@ -99,13 +126,12 @@ Preloader
         <div class="row">
           <div class="col-xs-12">
             <div class="hero_content animatedParent animateLoop">
-			<h1> <img src="assets/img/logo/CHENNAI RADIO.png" style="position:inherit; TOP:10px; LEFT:170px; WIDTH:304px; HEIGHT:228px" ></h1>
-              <h1 class="animated bounceInDown">CHENNAI RADIO<span class="primary_color"></span></h1>
-              <h4 class="animated bounceInLeft" style="color:white"><i>"Engeyum Eppothum"</i></h4>
+			<!--<h1> <img src="assets/img/logo/CHENNAI RADIO.png" style="position:inherit; TOP:10px; LEFT:170px; WIDTH:304px; HEIGHT:228px" ></h1>-->
+              <!--<h1 class="animated bounceInDown">CHENNAI RADIO<span class="primary_color"></span></h1>
+              <h4 class="animated bounceInLeft" style="color:white"><i>"Engeyum Eppothum"</i></h4>-->
               <a class="ScrollTo animated bounceInUp" href="#section_5"><i class="fa fa-angle-down"></i></a>
               <div class="rock_controls controls" style="padding-top: 15px;padding-left: 15px;">
-                <div class="fa fa-play jp-play" style="display: block";position="center" onclick="playMusic()"></div>
-                <div class="fa fa-pause jp-pause" style="display: none;" onclick="stopMusic()"></div>
+
               </div>
 			 <div class="fb-like" data-href="https://www.facebook.com/ChennaiRadio/" data-width="100px" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
            </div>
@@ -114,6 +140,7 @@ Preloader
         </div>
       </div>
 </section>
+
 <script>
   function playMusic(){
     $("#audioPlay").attr("src", "http://api.chennairadio.ca:8000/stream");
@@ -126,20 +153,430 @@ Preloader
     $(".fa-pause").toggle();
   }
 </script>
+<div class="rock_player pre_sticky">
+<div class="sticky_player" data-sticky="true">
+	<div class="play_list">
+		<div class="list_scroll">
+			<div class="container ">
+				<ul class="music_widget player_data">
+					<li class="music_row_header">
+						<div class="column_one"> # </div>
+						<div class="column_two"> &nbsp;<!--no header for picture column-->
+						</div>
+						<div class="column_three">Weekday Schedule List </div>
+						<div class="column_four"> From </div>
+						<div class="column_five"> To </div>
+						<div class="column_six"> length </div>
+						<div class="column_seven"> &nbsp;<!--no header for play column-->
+						</div>
+						<div class="column_eight"> &nbsp;<!--no header for btn column-->
+						</div>
+					</li>
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">1 hour</div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">1 hour</div>
+						</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/RJ.Abi.ChennaiRadio/"target="_blank">Connect with RJ ABI</a> </div>
+					</li>
+					<!--music row-->
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">1 Hour</div>
+					 <div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/rjangay.chandrasekar"target="_blank">Connect with RJ Angay</a> </div>
+					 </li>
+
+					<!--music row-->
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre">11 AM</div>
+						<div class="column_five track_composer">2 PM</div>
+						<div class="column_six track_length">3 Hour</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/RjDivyaV/"target="_blank">Connect with RJ DIVYA</a> </div>
+					</li>
+					<!--music row-->
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">3 hours</div>
+
+					<!--music row-->
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">1 hour</div>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">1 hour</div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/vidhyashankar.srinivasan.5" targer="_blank">Connect with RJ VS</a> </div>
+					</li>
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/preethapremkumarv/" targer="_blank">Connect with RJ Pree</a> </div>
+					</li>
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/RJ-Venky-1424999354259894/" targer="_blank">Connect with RJ Venky</a> </div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/RJ.Abi.ChennaiRadio/"target="_blank">Connect with RJ ABI</a> </div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre">11 AM</div>
+						<div class="column_five track_composer">2 PM</div>
+						<div class="column_six track_length">3 Hours</div>
+
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/RjDivyaV/"target="_blank">Connect with RJ DIVYA</a> </div>
+					</li>
+
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">4 hours </div>
+					</li>
+
+					<li class="music_row_header">
+						<div class="column_one"> # </div>
+						<div class="column_two"> &nbsp;<!--no header for picture column-->
+						</div>
+						<div class="column_three"> Weekend Schedule List </div>
+						<div class="column_four"> From </div>
+						<div class="column_five"> To </div>
+						<div class="column_six"> length </div>
+						<div class="column_seven"> &nbsp;<!--no header for play column-->
+						</div>
+						<div class="column_eight"> &nbsp;<!--no header for btn column-->
+						</div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">5 hours</div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hour</div>
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/rj.sowmi" target="_blank">Connect with RJ Sowmya</a> </div>
+						</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">6 hours</div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">2 hours</div>
+						<div class="column_eight"> <a class="btn btn_watch_video" href="https://www.facebook.com/vidhyashankar.srinivasan.5" targer="_blank">Connect with RJ VS</a> </div>
+					</li>
+
+					<li class="music_row">
+						<div class="column_one track_index"></div>
+						<div class="column_two track_thumb"></div>
+						<div class="column_three track_title"></div>
+						<div class="column_four track_genre"></div>
+						<div class="column_five track_composer"></div>
+						<div class="column_six track_length">9 hours</div>
+					</li>
+
+
+
+					<!--music row-->
+				</ul>
+				<!--music_widget-->
+			</div>
+			<!--container-->
+		</div>
+	</div>
+
+
+	<!--//=============================================================
+	Edit or Modify Playist content in the following Hypertext
+	==============================================================-->
+	<div class="jp-playlist hidden">
+		<!--Add Songs In mp3 formate here-->
+		<ul class=" playlist-files">
+
+			<li
+						 data-thumb="assets/img/news/ohm.png"
+						 data-title="Recharge Raaga"
+							data-genre="6:00AM"
+						 data-artist="7:00AM"
+
+						 </li>
+			<li
+						 data-thumb="assets/img/news/NBH.png"
+						 data-title="New Born Hits"
+							data-genre="7:00AM"
+						 data-artist="8:00AM"
+						 </li>
+			<li
+						 data-thumb="assets/img/news/n7.jpg"
+						 data-title="Abiyum Naanum By RJ ABI"
+							data-genre="8:00AM"
+						 data-artist="10:00AM"
+					 </li>
+			<li
+		 						 data-thumb="assets/img/news/n1.jpg"
+		 						 data-title="Share Auto Rj Angayarkanni"
+		 							data-genre="10:00AM"
+		 						 data-artist="11:00AM"
+		 					 </li>
+			<li
+				 						 data-thumb="assets/img/news/n3.jpg"
+				 						 data-title="Noisebook by RJ Divya"
+				 							data-genre="11:00AM"
+				 						 data-artist="2:00PM"
+				 					 </li>
+		 <li
+								 	data-thumb="assets/img/news/n4.jpg"
+	 							  data-title="Tentkottai"
+								  data-genre="2:00PM"
+								 data-artist="5:00PM"
+								  </li>
+
+		 <li
+								 data-thumb="assets/img/news/Com.png"
+								 data-title="Magizchi"
+								 data-genre="5:00PM"
+								 data-artist="6:00PM"
+									</li>
+<li
+								 data-thumb="assets/img/news/n1.jpg"
+ 								 data-title="Share Auto Rj Angayarkanni(Repeat)"
+ 								 data-genre="6:00PM"
+ 								 data-artist="7:00PM"
+ 									</li>
+
+<li
+									data-thumb="assets/img/news/n6.jpg"
+ 								 data-title="Palakattu Madhavan by Rj Vidhyashankar (Monday and Wednesday)"
+ 								 data-genre="7:00PM"
+ 								 data-artist="9:00PM"
+ 									</li>
+<li
+									data-thumb="assets/img/news/n9.jpg"
+ 								 data-title="Priyamudan pree by RJ Pree (Tuesday and Thursday)"
+ 								 data-genre="7:00PM"
+ 								 data-artist="9:00PM"
+ 									</li>
+<li
+									data-thumb="assets/img/news/n5.jpg"
+ 								 data-title="Cinema Kaaram Kaapi by RJ Venki(Friday)"
+ 								 data-genre="7:00PM"
+ 								 data-artist="9:00PM"
+ 									</li>
+
+<li
+									data-thumb="assets/img/news/n7.jpg"
+ 								 data-title="Abiyum Naanum By RJ ABI (Repeat)"
+ 								 data-genre="9:00PM"
+ 								 data-artist="11:00PM"
+ 									</li>
+<li
+									data-thumb="assets/img/news/n3.jpg"
+ 								 data-title="Noisebook by RJ Divya (Repeat)"
+ 								 data-genre="11:00PM"
+ 								 data-artist="2:00AM"
+ 									</li>
+<li
+									data-thumb="assets/img/news/NBH.png"
+									data-title="Non Stop Raaga"
+									data-genre="2:00AM"
+									data-artist="6:00AM"
+									</li>
+<li
+								  data-thumb="assets/img/news/NBH.png"
+									data-title="New born hits"
+									data-genre="6:00AM"
+									data-artist="11:00AM"
+									</li>
+<li									data-thumb="assets/img/news/NBH.png"
+									data-title="New born hits"
+									data-genre="6:00AM"
+									data-artist="11:00AM"
+									</li>
+
+
+
+<li
+									data-thumb="assets/img/news/n8.jpg"
+									data-title="Arattai with RJ Sowmi"
+									data-genre="11:00AM"
+									data-artist="1:00PM"
+									</li>
+<li
+									data-thumb="assets/img/news/NBH.png"
+									data-title="Non Stop Raaga"
+									data-genre="1:00PM"
+									data-artist="7:00PM"
+									</li>
+
+<li
+									data-thumb="assets/img/news/n6.jpg"
+									data-title="Palakattu Madhavan by Rj Vidhyashankar (Repeat)"
+									data-genre="7:00PM"
+									data-artist="9:00PM"
+									</li>
+<li
+									data-thumb="assets/img/news/NBH.png"
+									data-title="Non Stop Raaga"
+									data-genre="9:00PM"
+									data-artist="6:00AM"
+									</li>
+
+
+
+
+		</ul>
+		<!--Playlist ends-->
+	</div>
+	<div class="container player_wrapper">
+		<div class="row">
+			<div id="player-instance" class="jp-jplayer"></div>
+			<h10 style="color:white; padding-right:50px"> Chennai Radio </h10>
+			<span> </span>
+
+			<div class="rock_controls controls">
+				<div  class="fa fa-play jp-play" style="display: block";position="left" onclick="playMusic()"></div>
+				<div  class="fa fa-pause jp-pause" style="display: none;" onclick="stopMusic()"></div>
+			</div>
+			<!--controls-->
+			<div class="audio-progress">
+				<!--<div class="jp-seek-bar">
+					<div class="audio-play-bar jp-play-bar" style="width:20%;"></div>
+				</div>-->
+				<!--jp-seek-bar-->
+
+			</div>
+			<!--audio-progress-->
+			<!--<div class="audio-timer"> <span class="jp-current-time">01:02</span> </div>
+			<div class="jp-volume">
+				<ul>
+					<li class="active"><a href="#"></a></li>
+
+					<li><a href="#"></a></li>
+				</ul>
+			</div>-->
+			<h10 style="color:RED; padding-left:100px"> Schedule </h10>
+			<a href="#" class="playlist_expander fa fa-bars"></a> </div>
+	</div>
+</div></div>
+
+</section>
     <!--=========================
      Header
     ===========================-->
     <header>
-      <nav id="sticktop" class="navbar navbar-default" data-sticky="true">
+			<nav id="" class="navbar navbar-default" data-sticky="true">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="#"><img src="assets/img/basic/logo.png" alt="logo"/></a> </div>
+            <!--<a class="navbar-brand" href="#"><img src="assets/img/basic/logo.png" alt="logo"/></a> </div>-->
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#section_5">Music</a></li>
-              <li><a href="#section_13">Connect</a></li>
-			  <li><a href="#section_8">Events</a></li>
+              <li><a href="#section_5">Team</a></li>
+							<li><a href="#section_7">Media</a></li>
+			  			<li><a href="#section_8">FB Live</a></li>
+							<li><a href="#section_30">Twitter</a></li>
+							<li><a href="#section_20">Sound Cloud</a></li>
+							<li><a href="#section_13">Connect</a></li>
+							<li><a href="#section_15">Offers and Deals</a></li>
             </ul>
           </div>
           <!--/.nav-collapse -->
@@ -163,7 +600,7 @@ Preloader
           <div class="row">
             <div class="col-xs-12 col-sm-8">
               <div class="section_head_widget animatedParent ">
-                <h2 class="animated fadeInLeft">our shows</h2>
+                <h2 class="animated fadeInLeft">OUR TEAM</h2>
 
               </div>
               <!--section_head_widget-->
@@ -172,197 +609,319 @@ Preloader
           </div>
           <!--row-->
           <div class="row tracks_widget">
-            <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n1.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Share Auto</h4>
-                    <h6>RJ Angayarkanni</h6>
-					<h5>Monday - Friday</h5>
-					 <h5>10:00Am - 11:00Am & </h5>
-					 <h5>6:00Pm - 7:00Pm </h5>
 
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="1"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
-
-
+  <!--Rj Divya Intro-->
             <div class="col-sm-4 col-xs-12 animatedParent">
               <div class="track_box animated fadeInUp">
                 <figure><img src="assets/img/news/n3.jpg" alt="" /></figure>
                 <div class="track_info_wrapper">
                   <div class="track_info">
-                    <h4>Noisebook</h4>
-					<h6>Rj Dhivya</h6>
-					 <h5>Monday - Friday</h5>
-					 <h5>11:00Am - 2:00Pm </h5>
+										<h6>    Rj Divya</h6>
+                    <h4>    Noisebook</h4>
+									</div>
+                </div>
+								<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop10" > Know about my Show </a> </div>
+							</div>
+  					</div>
+			<div class="modal fade" id="gal_pop10" tabindex="-1" role="dialog" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+									<div class="modal-body">
+											<div class="gallery_popup container">
+													<ul class="gallayoutOption">
+														<li class="active"><a href="#" class=""></a></li>
+															<li><a href="#" class=""></a></li>
+													</ul>
+													<h2>NoiseBook</h2>
+ 													<h6>With RJ DIVYA</h6>
+														<div class="galery_widget">
+															<ul class="">
+		                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/d1.jpg" alt="" /></a></li>
+															<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/d2.jpg" alt="" /></a></li>
+														<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/d3.jpg" alt="" /></a></li>
+													<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/d4.jpg" alt="" /></a></li></ul>
+														<div class="text_widget">
+  														<h2 style="color:violet">Entertainment guaranteed!</h2><p>Noisebook is a loud and fun live show with segments like "Tuesdate with art", "Playday Wednesday" , "Throwback Thursdays", and the popular celebrity interview segment on "Nizhaligalin Nijam". Listeners can call in to take part in these segments or request their favourite songs!</p>
+															<span></span>
+															<P> Divya Vivekanandan is a professional Indian classical vocalist and a Radio Jockey based in Toronto. Born and raised in Chennai, she is a perfect match for Noice book. Her passion for arts and music shines through her live show Noisebook!</p>
+														<h6> Monday to friday : 11:00AM to 2:00PM EST</h6></div>
+													</div>
+											</div>
+										</div>
+								</div>
+							</div>
+				</div>
+
+				<!--Angayarkanni profile-->
+				<div class="col-sm-4 col-xs-12 animatedParent">
+					<div class="track_box animated fadeInUp">
+						<figure><img src="assets/img/news/n1.jpg" alt="" /></figure>
+						<div class="track_info_wrapper">
+							<div class="track_info">
+								<h6>    Rj Angayarkanni</h6>
+								<h4>    Share Auto</h4>
+							</div>
+						</div>
+						<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop11" > Know about my Show </a> </div>
 					</div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="3"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
+				</div>
+			<div class="modal fade" id="gal_pop11" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<div class="modal-body">
+									<div class="gallery_popup container">
+											<ul class="gallayoutOption">
+												<li class="active"><a href="#" class=""></a></li>
+													<li><a href="#" class=""></a></li>
+											</ul>
+											<h2>Share Auto</h2>
+											<h6>With Rj Angayarkanni</h6>
+												<div class="galery_widget">
+													<ul class="">
+														<li class="trigger_slider"><a href="#"><img src="assets/img/news/n1.jpg" alt="" /></a></li>
+													<!--<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+												<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+											<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li></ul>-->
+												<div class="text_widget">
+													<h2 style="color:red"> Attention!</h2><p>With the combination of morning break and the voice of RJ Angayarkanni is a complete potboiler.
+Tune in to this master storyteller as she weaves her magical moments of humour, suspense, action, thrills, twists, turns, spoofs,
+slapstick, romance and more. Are you game for some gut-wrenching action every evening? Pad up, take guard, and
+face Angry as she bowls her bouncers, swingers, beamers, Yorkers, cutters, googlies and more. Don’t miss this
+edge-of-the-seat excitement.</p><h6> Monday to friday : 10:00AM to 11:00AM  & 6:00PM to 7:00PM EST</h6>
+												</div>
+											</div>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
 
-            <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n4.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Tentkottai</h4>
-					<h6>Movie Time</h6>
-					<h6></h6>
-					 <h5>Monday - Friday</h5>
-					 <h5>2:00Pm - 5:00Pm </h5>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="3"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
-
-            <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n5.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Vettaiyadu Vilayadu I</h4>
-					<h6>Rj Venki</h6>
-					<h6></h6>
-					 <h5>Thusday & Friday</h5>
-					 <h5>7:00Pm - 9:00Pm </h5>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="4"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
+			<!-- Venky intro-->
 
 			<div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n9.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Vettaiyadu Vilayadu II</h4>
-					<h6>Rj Preetha</h6>
-					<h6></h6>
-					 <h5>Thursday & Friday</h5>
-					 <h5>7:00Pm - 9:00Pm </h5>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="4"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
+				<div class="track_box animated fadeInUp">
+					<figure><img src="assets/img/gallery/s5.jpg" alt="" /></figure>
+					<div class="track_info_wrapper">
+						<div class="track_info">
+							<h6>    Rj Venky</h6>
+							<h4>    Cinema Kaaram Kaapi</h4>
+						</div>
+					</div>
+					<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop12" > Know about my Show </a> </div>
+				</div>
+			</div>
+			<div class="modal fade" id="gal_pop12" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div class="modal-body">
+								<div class="gallery_popup container">
+										<ul class="gallayoutOption">
+											<li class="active"><a href="#" class=""></a></li>
+												<li><a href="#" class=""></a></li>
+										</ul>
+										<h2>Cinema Kaaram Kaapi</h2>
+										<h6>With Rj Venky</h6>
+											<div class="galery_widget">
+												<ul class="">
 
-			<div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n8.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Vettaiyadu Vilayadu III</h4>
-					<h6>Rj Ravi</h6>
-					<h6></h6>
-					 <h5>Monday & Wednesday</h5>
-					 <h5>7:00Pm - 9:00Pm </h5>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="4"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
+												<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/s2.jpg" alt="" /></a></li>
+											<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/s3.jpg" alt="" /></a></li>
+										<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/s4.jpg" alt="" /></a></li>
+									<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/s5.jpg" alt="" /></a></li></ul>
+											<div class="text_widget">
+												<h2 style="color:orange">Kodambakkam mudhal Toronto varai...Trump mudhal Trudeau varai</h2><p>5 days work pannitu....Friday evening TGIF....." Like a child" we are waiting for the weekend to start....konjam music…, konjam conversatio…, athiga evening coffee! and let talk about whats happening...in and around City. We will discuss on cinema-Kaaram-Kaaapi with one and only MR.RJ Venki</p>
+											<h6> Only On Friday : 7:00PM to 9:00PM EST</h6></div>
+										</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
 
-        <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n6.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Abiyum Naanum</h4>
-					<h6>Rj Abi</h6>
-					<h6></h6>
-					 <h5>Monday - Friday</h5>
-					 <h5>9:00Pm - 11:00Pm </h5>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="5"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
-            <!--column-->
+	<!--Pree intro-->
 
-            <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n3.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-					<h4>Saturday<h4>
-					<h5>Arratai</h5>
-					<h5>11:00Am - 1:00Pm </h5>
-					<h5>Mankatha</h5>
-					<h5>1:00pm - 3Pm </h5>
-					<h6>RJ Divya</h6>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="6"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
+	<div class="col-sm-4 col-xs-12 animatedParent">
+		<div class="track_box animated fadeInUp">
+			<figure><img src="assets/img/news/n9.jpg" alt="" /></figure>
+			<div class="track_info_wrapper">
+				<div class="track_info">
+					<h6>    Rj Pree</h6>
+					<h4>    Priyamudan pree</h4>
+				</div>
+			</div>
+			<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop13" > Know about my Show </a> </div>
+		</div>
+	</div>
+	<div class="modal fade" id="gal_pop13" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<div class="modal-body">
+						<div class="gallery_popup container">
+								<ul class="gallayoutOption">
+									<li class="active"><a href="#" class=""></a></li>
+										<li><a href="#" class=""></a></li>
+								</ul>
+								<h2>Priyamudan pree</h2>
+								<h6>With RJ Pree</h6>
+									<div class="galery_widget">
+										<ul class="">
+											<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/p1.jpg" alt="" /></a></li>
+										<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/p2.jpg" alt="" /></a></li>
+									<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/p3.jpg" alt="" /></a></li>
+								<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/p4.jpg" alt="" /></a></li>
+							<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/p5.jpg" alt="" /></a></li></ul>
+									<div class="text_widget">
+										<p>Viru viru nu velaiye mudichitu, vegamaa veedu thirumbi, saindu utkaarum saayingaalathil... thozhi polae pesavum, marandu pona manadhai mayakkum paadalgalum, prabalangal malarndu valarnde kadhaigalum, 'Adade apidiyaa? ' ponre thagavalgalum...
+Sirikavum, Sindhikavum, Silaagikavum kelunge RJ Pree's show in Chennai radio!</p>
+<h6>Tuesday and Thursday : 7:00PM to 9:00PM EST</h6>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
 
+	<!--Abi-->
 
-            <div class="col-sm-4 col-xs-12 animatedParent">
-              <div class="track_box animated fadeInUp">
-                <figure><img src="assets/img/news/n7.jpg" alt="" /></figure>
-                <div class="track_info_wrapper">
-                  <div class="track_info">
-                    <h4>Sunday<h4>
-					<h5>Arratai</h5>
-					<h5>11:00Am - 1:00Pm </h5>
-					<h5>Mankatha</h5>
-					<h5>1:00pm - 3Pm </h5>
-					<h6>RJ Harrish</h6>
-                  </div>
-                  <!--news_info-->
-                </div>
-                <!--//news_info_wrapper-->
-                <!--<div class="hover"> <a class="triggerTrack" href="albums.html" data-number="6"> Read Full Article </a> </div>-->
-                <!--//hover-->
-              </div>
-              <!--//news_box-->
-            </div>
+	<div class="col-sm-4 col-xs-12 animatedParent">
+		<div class="track_box animated fadeInUp">
+			<figure><img src="assets/img/news/n7.jpg" alt="" /></figure>
+			<div class="track_info_wrapper">
+				<div class="track_info">
+					<h6>    Rj Abi</h6>
+					<h4>    Abiyum Naanum</h4>
+				</div>
+			</div>
+			<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop14" > Know about my Show </a> </div>
+		</div>
+	</div>
+	<div class="modal fade" id="gal_pop14" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<div class="modal-body">
+						<div class="gallery_popup container">
+								<ul class="gallayoutOption">
+									<li class="active"><a href="#" class=""></a></li>
+										<li><a href="#" class=""></a></li>
+								</ul>
+								<h2>Abiyum Naanum</h2>
+								<h6>With RJ Abi</h6>
+									<div class="galery_widget">
+										<ul class="">
+											<li class="trigger_slider"><a href="#"><img src="assets/img/news/n7.jpg" alt="" /></a></li>
+										<!--<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+									<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+								<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>--></ul>
+									<div class="text_widget">
+										<h2 style="color:red">Suda suda kaapi..</h2> <p>Soodaana breakfast.. Surusurupa office kelambra neram nu unga daily morning routine ah innum Energetic aaga 'Abiyum Naanum' kelunga.. Pada pada nu RJ Abi oda pattasu pechu.. Pattayakalapra paatu nu unga day ku oru pudhu puthunarchi Kedachudum.. Tech Talk.. Game..Evergreen movie trivia... Innum vithyasamana பல vishyangal... Dhinam Dhinam.. ☺️
+Get set for a refreshing morning.. :) </p>
+<h6> Monday to friday : 8:00AM to 10:00AM  & 9:00PM to 11:00PM EST</h6>
+									</div>
+								</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+<!--Vidhyashankar-->
 
+<div class="col-sm-4 col-xs-12 animatedParent">
+	<div class="track_box animated fadeInUp">
+		<figure><img src="assets/img/gallery/vv.jpg" alt="" /></figure>
+		<div class="track_info_wrapper">
+			<div class="track_info">
+				<h6>    Rj Vidhyashankar</h6>
+				<h4>    Palakattu madhavan</h4>
+			</div>
+		</div>
+		<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop15" > Know about my Show </a> </div>
+	</div>
+</div>
+<div class="modal fade" id="gal_pop15" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<div class="modal-body">
+					<div class="gallery_popup container">
+							<ul class="gallayoutOption">
+								<li class="active"><a href="#" class=""></a></li>
+									<li><a href="#" class=""></a></li>
+							</ul>
+							<h2>Palakattu madhavan</h2>
+							<h6>With RJ Vidhyashankar</h6>
+								<div class="galery_widget">
+									<ul class="">
+										<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/v1.jpg" alt="" /></a></li>
+									<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/v2.jpg" alt="" /></a></li>
+								<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/v3.jpg" alt="" /></a></li>
+							<li class="trigger_slider"><a href="#"><img src="assets/img/news/n6.jpg" alt="" /></a></li></ul>
+								<div class="text_widget">
+									<h2 style="color:Green">RJing for Chennai Radio's</h2><p> music based fun show Papparapara with Palakkad Madhavan.
 
+Paadalama Padakoodadha, Kaepangala Maatangala, Kai thattuvangala Thalaiyile kottuvangala.....indha madhiri kavalai ellam marakku, thannaye marandhu isai paniyil (canadavil vellathai vida pani thaane adigam) vilayadam....on papparapara show with pkd mdy with RJ Vidhyashankar.....every Wednesday 7pm to 9pm....😊</p>
+<h10>Yennai Pattri sela :</h10> <p>play back singer and RJ. Winner of multiple reality shows across South India. Sang in movie 180 for respected music director Sharreth.</p>
+								<h6> Monday, Wednesday, Saturday and Sunday : 7:00PM to 9:00PM EST</h6></div>
+							</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<!-- Sowmi-->
+<div class="col-sm-4 col-xs-12 animatedParent">
+	<div class="track_box animated fadeInUp">
+		<figure><img src="assets/img/news/n8.jpg" alt="" /></figure>
+		<div class="track_info_wrapper">
+			<div class="track_info">
+				<h6>Rj sowmi</h6>
+				<h4>Arattai</h4>
+			</div>
+		</div>
+		<div class="hover"> <a class="galery_widget" href="#" data-toggle="modal" data-target="#gal_pop16" > Know about my Show </a> </div>
+	</div>
+</div>
+<div class="modal fade" id="gal_pop16" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<div class="modal-body">
+					<div class="gallery_popup container">
+							<ul class="gallayoutOption">
+								<li class="active"><a href="#" class=""></a></li>
+									<li><a href="#" class=""></a></li>
+							</ul>
+							<h2>Arratai</h2>
+							<h6>With RJ sowmi</h6>
+								<div class="galery_widget">
+									<ul class="">
+										<li class="trigger_slider"><a href="#"><img src="assets/img/news/n8.jpg" alt="" /></a></li>
+									<!--<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+								<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
+							<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>--></ul>
+								<div class="text_widget">
+									<h2 style="color:purple">"Mahola"</h2><p>This 2-hour morning show is gonna be a
+cracker for day. Take a sneak-peek at news from the
+neighborhood to national, local and global, views and opinions,
+Thirukural to Oscar awards, business and sports, fashion and
+entertainment, sound bytes, caller interaction and SMS polls. No
+matter, the nature of news – ensure that there is an additional
+perspective, a local connect and a slice-of-life treatment. Tune in and
+know all.</p>
+<h6> Saturday and Sunday: 11:00AM to 1:00PM EST</h6>
+								</div>
+							</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
 
 
         </div>
@@ -391,12 +950,15 @@ Preloader
           <div class="container">
             <div class="row">
               <div class="col-xs-12 animatedParent ">
-                <h1  class="animated fadeInDown">Catch us LIVE!</h1>
+                <h1  class="animated fadeInDown"style="color:black">   </h1>
+								<h1  class="animated fadeInDown"style="color:black">   </h1>
+								<h1  class="animated fadeInDown"style="color:black">   </h1>
 				<br></br>
-                <h4 class="animated bounceInRight">Visit our Facebook page to know more</h4>
+                <!--<h4 class="animated bounceInRight" style="color:black">Visit our facebook page to know more</h4>
 				<br></br>
-
-                <a onclick="window.open('https://www.facebook.com/ChennaiRadio/')" class="btn">Click Here</a>
+				h4  class="animated bounceInRight">Click here</h4>
+				<h2  class="animated bounceInRight">Click here</h2>-
+                <a onclick="window.open('https://www.facebook.com/ChennaiRadio/')" class="btn">Click Here</a>-->
               </div>
               <!--column-->
             </div>
@@ -409,162 +971,182 @@ Preloader
       <!--//parallax-->
 
       <!--======================================
-    About
+Facebook
     ==========================================-->
       <section id="section_12" class="about_section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="section_head_widget animatedParent ">
-                <h1 class="animated fadeInDown">Our amazing story</h1>
-                <h4>Who we are</h4>
-              </div>
-            </div>
-            <!--section_head_widget-->
-          </div>
-          <!--row-->
 
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="text_widget">
-                <p>Chennai Radio 24/7 online radio broadcasting in tamil language and music based formats in North America, Europe and Asia – including the Middle East – and has a thousands of listeners worldwide. Chennai Radio station has a team of experienced & most popular RJs across Canada, India, Middle East</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--container-->
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FChennaiRadio%2F&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="float:right" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+					<div class="section_head_widget animatedParent">
+						<h1 class="animated fadeInDown" >Catch us Live!</h1>
+						<h4>visit our facebook page to know more</h4>
+						<img src="assets/img/basic/LIve next.png" alt="" style="height: 280px;position=centre;padding-top:75px"/>
+						<h4> </h4>
+						<h4> </h4>
+<h4> </h4>
+
+					</div>
+
       </section>
 
 
-    <!--=====================================
-    Gallery Pop Ups :
-    You can create as many modals/poups as needed,
-    ==========================================-->
+<!--Twitter-->
+<section id="section_8" class="parallax parallax_seven event_promo" data-stellar-background-ratio="0.5">
+	<div class="parallax" style="padding-top:120px">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 animatedParent ">
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+	<br></br>
+					<!--<h4 class="animated bounceInRight" style="color:black">Visit our facebook page to know more</h4>
+	<br></br>
+	h4  class="animated bounceInRight">Click here</h4>
+	<h2  class="animated bounceInRight">Click here</h2>-
+					<a onclick="window.open('https://www.facebook.com/ChennaiRadio/')" class="btn">Click Here</a>-->
+				</div>
+				<!--column-->
+			</div>
+			<!--row-->
+		</div>
+		<!--container-->
+	</div>
+	<!--parallax_inner-->
+</section>
+<!--//parallax-->
 
-      <div class="modal fade" id="gal_pop" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
+<!--======================================
+Facebook
+==========================================-->
+<section id="section_30" class="about_section">
+	<div class="section_head_widget animatedParent">
+		<h1 class="animated fadeInDown" >Tweet! Tweet! Tweet!</h1>
+		<h4 style="padding-bottom:50px">watch out for new updates</h4>
 
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
+<div style="margin-right:10px;padding-left:20px">
+		<a class="twitter-timeline" data-width="1100" data-height="400" href="https://twitter.com/chennai_Radio"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+</div>
+</section>
 
-                    <h2>Behind the scenes</h2>
-                    <h6>24 Photos</h6>
 
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
 
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
+<!--Sound cloud-->
+<section id="section_8" class="parallax parallax_eight event_promo" data-stellar-background-ratio="0.5">
+	<div class="parallax" style="padding-top:120px">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 animatedParent ">
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+					<h1  class="animated fadeInDown"style="color:black">   </h1>
+	<br></br>
+					<!--<h4 class="animated bounceInRight" style="color:black">Visit our facebook page to know more</h4>
+	<br></br>
+	h4  class="animated bounceInRight">Click here</h4>
+	<h2  class="animated bounceInRight">Click here</h2>-
+					<a onclick="window.open('https://www.facebook.com/ChennaiRadio/')" class="btn">Click Here</a>-->
+				</div>
+				<!--column-->
+			</div>
+			<!--row-->
+		</div>
+		<!--container-->
+	</div>
+	<!--parallax_inner-->
+</section>
+<!--//parallax-->
+			<section id="section_20" class="about_section">
+				<h4 style="text-align:center; padding-bottom:50px">  Bringing Chennai Radio close to you with Sound cloud!!</h4>
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/266767248&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+</section>
 
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
+			<!--======================================
+		Media Section
+		==========================================-->
+		<section id="section_8" class="parallax parallax_nine event_promo" data-stellar-background-ratio="0.5">
+			<div class="parallax" style="padding-top:120px">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 animatedParent ">
+							<h1  class="animated fadeInDown"style="color:black">   </h1>
+							<h1  class="animated fadeInDown"style="color:black">   </h1>
+							<h1  class="animated fadeInDown"style="color:black">   </h1>
+			<br></br>
+							<!--<h4 class="animated bounceInRight" style="color:black">Visit our facebook page to know more</h4>
+			<br></br>
+			h4  class="animated bounceInRight">Click here</h4>
+			<h2  class="animated bounceInRight">Click here</h2>-
+							<a onclick="window.open('https://www.facebook.com/ChennaiRadio/')" class="btn">Click Here</a>-->
+						</div>
+						<!--column-->
+					</div>
+					<!--row-->
+				</div>
+				<!--container-->
+			</div>
+			<!--parallax_inner-->
+		</section>
 
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="modal fade" id="gal_pop2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
 
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
 
-                    <h2>poison in news</h2>
-                    <h6>24 Photos</h6>
+			<section id="section_7"    class="media_section">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-8">
+							<div class="section_head_widget animatedParent">
+								<h2 class="animated fadeInLeft" style="color:black">
+									<h4 style="padding-bottom:50px">Check out our gallery!</h4>
+								</h2>
+							</div>
+						</div>
+								<!--<h5 class="animated bounceInUp">photos &amp; videos</h5>
 
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
+						<div class="col-xs-12 col-sm-4 text-right">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										2014 <span class="fa fa-caret-down"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">2013</a></li>
+										<li><a href="#">2012</a></li>
+										<li><a href="#">2011</a></li>
+									</ul>
+								</div>
+						</div>-->
+						<!--section_head_widget-->
+					</div>
+					<!--row-->
 
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
 
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
 
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
+						<div class="col-xs-12 col-sm-4 col-md-3 animatedParent">
+							<figure class="animated fadeInUp">
+								<a href="#" data-toggle="modal" data-target="#gal_pop3">
+									<img src="assets/img/gallery/g18.jpg" alt=""	/>
+								</a><!--hyperlink-->
+								<figcaption>
+									<h6 style="color:red">Chithirai thiruvizha 2017</h6>
+									26 photos </figcaption>
+							</figure>
+						</div>
 
+						<div class="col-xs-12 col-sm-4 col-md-3 animatedParent">
+              <figure class="animated fadeInUp">
+              	<a href="#" data-toggle="modal" data-target="#gal_pop4">
+                	<img src="assets/img/gallery/Music party/mp15.jpg" alt="" />
+                </a><!--hyperlink-->
+                <figcaption>
+                  <h6 style="color:red">Music Party 2017</h6>
+                  19 photos </figcaption>
+              </figure>
+              <!--figure-->
+            </div>
+						</div>
+			</section>
+			<!--//media_section-->
+
+<!-- Chithirai thiruvizha 2017Pictures-->
       <div class="modal fade" id="gal_pop3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -577,8 +1159,8 @@ Preloader
                         <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
                     </ul>
 
-                    <h2>paris live concert</h2>
-                    <h6>24 Photos</h6>
+                    <h2>Chithirai thiruvizha 2017</h2>
+                    <h6>26 Photos</h6>
 
                     <div class="galery_widget">
                         <ul class="gal_list">
@@ -602,32 +1184,25 @@ Preloader
                             <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
                             <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
                             <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g21.jpg" alt="" /></a></li>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g22.jpg" alt="" /></a></li>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g23.jpg" alt=""/></a></li>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g24.jpg" alt=""/></a></li>
+														<li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g25.jpg" alt=""/></a></li>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g26.jpg" alt=""/></a></li>
                         </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
+  									</div>
                 </div><!--gallery-popup-->
               </div>
           </div>
         </div>
       </div>
+<!-- Music Party Pictures-->
 
-      <div class="modal fade" id="gal_pop4" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+<!--//media_section-->
+			<div class="modal fade" id="gal_pop4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -639,551 +1214,95 @@ Preloader
                         <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
                     </ul>
 
-                    <h2>poison in news</h2>
-                    <h6>24 Photos</h6>
+                    <h2>Music Party 2017</h2>
+                    <h6>19 Photos</h6>
 
                     <div class="galery_widget">
                         <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
 
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
+                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp2.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp3.jpg" alt="" /></a></li>
 
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp5.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp6.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp7.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp8.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp9.jpg" alt="" /></a></li>
 
-                    </div>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp11.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp12.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp15.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp16.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp17.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp18.jpg" alt="" /></a></li>
+												    <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/Music party/mp19.jpg" alt="" /></a></li>
+
+                        </ul>
+											</div>
                 </div><!--gallery-popup-->
-              </div>
+              </div>``
           </div>
         </div>
       </div>
 
-      <div class="modal fade" id="gal_pop5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
 
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
 
-                    <h2>photos by fans</h2>
-                    <h6>24 Photos</h6>
+<!-- Ads-->
+			<section id="section_15" class="gal1" class="team_section" >
+				<div class="container overlayNews">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="section_head_widget">
+								<h5 style="colour:white">Deals/offers</h5>
+								<h10 style="colour=black">Visit them to avail Chennai Radio offers</h10>
 
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
+							</div>
+						</div>
+						<!--column-->
+					</div>
+					<!--row-->
+				</div>
+				<!--contaier-->
+				<div class="team_widget">
+					<div class="container controls_wrapper animatedParent ">
+						<div class="carousel_controls"> <span id="member-prev" class="fa fa-angle-left animated fadeInLeft"></span> <span id="member-next" class="fa fa-angle-right animated bounceInRight"></span> </div>
+						<!--controls-->
+					</div>
+					<!--//controls_wrapper//carousel_overlay-->
 
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
+					<div class="members_carousel animatedParent" data-sequence="400">
+						<figure class="animated fadeInLeft" data-id="1" > <img src="assets/img/Ads/10.jpeg" alt=""/>
+							<figcaption ><a href="http://www.homelife.ca/node/735638" target="_blank">Manjit Chahal</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="2"> <img src="assets/img/Ads/1.jpeg" alt=""/>
+							<figcaption><a href="http://www.icfoodworld.ca/" target="_blank">IC Food World</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="3"> <img src="assets/img/Ads/2.jpeg" alt=""/>
+							<figcaption><a href="http://www.indiansweetmaster.com/take-out-menu" target="_blank">Indian Sweet Master</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="4"> <img src="assets/img/Ads/3.jpeg" alt=""/>
+							<figcaption><a href="http://markhamacura.ca/" target="_blank">Markham Acura</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="5"> <img src="assets/img/Ads/7.jpeg" alt=""/>
+							<figcaption><a href="http://www.rajdhanisweets.ca/" target="_blank">Rajghani Sweets and Restaurant</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="5"> <img src="assets/img/Ads/9.jpeg" alt=""/>
+							<figcaption><a href="www.subzimandi.ca/" target="_blank">Subzi Mandi </a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="5"> <img src="assets/img/Ads/12.jpeg" alt=""/>
+							<figcaption><a href="http://chennaicaters.com/" target="_blank">Chennai Caters</a></figcaption>
+						</figure>
+						<figure class="animated fadeInLeft" data-id="5"> <img src="assets/img/Ads/11.jpeg" alt=""/>
+							<figcaption><a href="http://www.asiyans.ca/" target="_blank">Asiyans Textiles </a></figcaption>
+						</figure>
 
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
 
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
+					</div>
+					<!--members_carousel-->
+				</div>
+			</section>
 
-      <div class="modal fade" id="gal_pop6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
 
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>the lorem</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop7" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>on red carpet</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop8" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>during live concert</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop9" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>fashion show in dublin</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop10" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>the Lorem</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop11" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>party with friends</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="gal_pop12" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <button type="button" class="close destroy_owl" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <div class="modal-body">
-
-                  <div class="gallery_popup container">
-                  	<ul class="gallayoutOption">
-                    	<li class="active"><a href="#" class="fa fa-th gridGallery"></a></li>
-                        <li><a href="#" class="fa fa-picture-o sliderGallery"></a></li>
-                    </ul>
-
-                    <h2>during live concert</h2>
-                    <h6>24 Photos</h6>
-
-                    <div class="galery_widget">
-                        <ul class="gal_list">
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g5.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g6.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g7.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g8.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g9.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g10.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g11.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g12.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g13.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g14.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g15.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g16.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g17.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g18.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g19.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g20.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g1.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g2.jpg" alt="" /></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g3.jpg" alt=""/></a></li>
-                            <li class="trigger_slider"><a href="#"><img src="assets/img/gallery/g4.jpg" alt=""/></a></li>
-                        </ul>
-
-                        <ul class="social_share">
-                            <li><a class="btn-share twitter" href="#">Tweet</a><span class="share-count">896</span></li>
-                            <li><a class="btn-share facebook" href="#">Like</a><span class="share-count">2k</span></li>
-                            <li><a class="btn-share google-plus" href="#">1+</a><span class="share-count">18</span></li>
-                        </ul>
-
-                        <ul class="channels_list row">
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-circular fa-music"></i>poison itunes</a></li>
-                          <li class="col-xs-12 col-sm-4"><a href="#"><i class="fa fa-soundcloud"></i>poison soundcloud</a></li>
-                          <li class="col-xs-12 col-sm-4"> <a href="#"><i class="fa fa-youtube"></i>poison youtube</a></li>
-                        </ul>
-
-                    </div>
-                </div><!--gallery-popup-->
-              </div>
-          </div>
-        </div>
-      </div>
 
 
       <!--======================================
@@ -1251,7 +1370,8 @@ Preloader
             <div class="row">
               <div class="col-xs-12">
                 <div class="copyrights" style="padding-top: 20px;">&copy; 2016 <a href="#">chennai radio</a>.</div>
-              </div>
+								<div style="text-align:center;"><script type="text/javascript" src="http://services.webestools.com/cpt_pages_views/56775-8-9.js"></script></div></a>
+							</div>
             </div>
           </div><!--container-->
         </div><!--parallax_inner-->
