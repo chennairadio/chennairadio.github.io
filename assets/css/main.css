@@ -355,7 +355,7 @@ a.ScrollTo{
 	position:absolute;
 	left:-11px;
 	top:-11px;
-	height:40px;
+	height:10px;
 	width:40px;
 	border:1px solid #cc1313;
 	border-radius:50%;
@@ -2310,7 +2310,7 @@ a.playlist_expander{
 	text-align:center !important;
 }
 .vegas-controls{
-	width:100%;
+	width:50%;
 	text-align:center;
 	margin-bottom:15px;
 	left:0;
