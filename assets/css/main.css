@@ -355,7 +355,7 @@ a.ScrollTo{
 	position:absolute;
 	left:-11px;
 	top:-11px;
-	height:10px;
+	height:40px;
 	width:40px;
 	border:1px solid #cc1313;
 	border-radius:50%;
@@ -476,6 +476,8 @@ a.playlist_expander{
 .sticky_player{
 	background:#000000;
 	background:rgba(0,0,0,0.75);
+	border-style: solid;
+  border-width: 2px 0px 2px 0px;
 	width:100%;
 	left:0;
 	top:0;
@@ -999,8 +1001,8 @@ a.playlist_expander{
 .carousel_controls span {
 	width: 47px;
 	height: 63px;
-	background: #343434;
-	color: #fff;
+	background: white;
+	color: Black;
 	font-size: 30px;
 	line-height: 63px;
 	text-align: center;
@@ -1367,13 +1369,13 @@ a.btn_itunes:hover{
 ==========================*/
 .gal{
   background: #fff; /* fallback for browsers that don't understand rgba */
-  background-color: rgba(255,255,255,0.95); /* slighly transparent white */
+  background-color: rgba(0,0,0,0.95); /* slighly transparent white */
 
 }
 
 .gal1{
   background: #fff; /* fallback for browsers that don't understand rgba */
-  background-color: rgba(0,0,0,1); /* slighly transparent white */
+  background-color: rgba(0,0,0,0.8); /* slighly transparent white */
 
 }
 .gal2{
