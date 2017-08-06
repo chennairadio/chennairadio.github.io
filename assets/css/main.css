@@ -1060,7 +1060,36 @@ a.playlist_expander{
 	z-index: 99;
 }
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*==========================
+Picture hover effect
+==========================*/
+.trigger_slider {
+  position: relative;
 
+  border: 1px solid #333;
+  margin: 2%;
+  overflow: hidden;
+  width: 540px;
+}
+.trigger_slider img {
+  max-width: 100%;
+
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.trigger_slider:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 /*==========================
 11-Newsletter
@@ -2054,29 +2083,6 @@ h6 { font-size: 15px; }
 	max-width:220px;
 	margin-left:60px;
 }
-}
-@media screen and (max-width: 400px) {
-    .fbauto{width: 80%;}
-}
-
-@media screen and (min-width: 401px) and (max-width: 720px) {
-    .fbauto{width: 80%;}
-}
-
-@media screen and (min-width: 721px) and (max-width: 1280px) {
-    .fbauto{width: 80%;}
-}
-
-@media screen and (min-width: 1281px) and (max-width: 1440px) {
-    .fbauto{width: 80%;}
-}
-
-@media screen and (min-width: 1441px) and (max-width: 1920px) {
-    .fbauto{width: 80%;}
-}
-
-@media screen and (min-width: 1921px) {
-    .fbauto{width: 80%;}
 }
 
 @media (max-width: 1024px) {
