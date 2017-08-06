@@ -1997,6 +1997,7 @@ Media Queries
 
 }
 @media (max-width: 1199px) {
+
 .comment_form{
 	text-align:left;
 }
@@ -2053,6 +2054,29 @@ h6 { font-size: 15px; }
 	max-width:220px;
 	margin-left:60px;
 }
+}
+@media screen and (max-width: 400px) {
+    .fbauto{width: 80%;}
+}
+
+@media screen and (min-width: 401px) and (max-width: 720px) {
+    .fbauto{width: 80%;}
+}
+
+@media screen and (min-width: 721px) and (max-width: 1280px) {
+    .fbauto{width: 80%;}
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .fbauto{width: 80%;}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    .fbauto{width: 80%;}
+}
+
+@media screen and (min-width: 1921px) {
+    .fbauto{width: 80%;}
 }
 
 @media (max-width: 1024px) {
