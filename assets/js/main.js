@@ -17,7 +17,7 @@ jQuery(function($){
 	12- Contact Form
 	==============*/
 
-	
+
 
 	var isStickyPlayer=$(".sticky_player").attr('data-sticky'),
 		isStickyNav=$("#sticktop").attr('data-sticky'),

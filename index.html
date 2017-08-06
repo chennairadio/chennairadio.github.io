@@ -119,6 +119,7 @@ Preloader
     <!--=================================
     Vegas Slider Images (Top image)
     =================================-->
+
     <ul class="vegas-slides hidden" data-speed="6000">
       <li><img data-fade='5000' src="assets/img/chennaiRadio/3.png" alt="" /></li>
       <li><img data-fade='5000' src="assets/img/chennaiRadio/122.png" alt="" /></li>
@@ -152,8 +153,10 @@ Preloader
 
   function playMusic(){
     $("#audioPlay").attr("src", "http://api.chennairadio.ca:8000/stream");
+
     $(".fa-play ").toggle();
     $(".fa-pause").toggle();
+    extension = audio.canPlayType('audio/mpeg') ? '.mp3' : audio.canPlayType('audio/ogg') ? '.ogg' : '';
   }
   function stopMusic(){
     $("#audioPlay").attr("src", "");
@@ -1325,6 +1328,16 @@ She believes "life is crazy so just stay mad."</p>
 
             </div>
 
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Bottom of the page -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7856743294586219"
+                 data-ad-slot="8627671316"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
 
             <div class="row">
               <div class="col-xs-12">
